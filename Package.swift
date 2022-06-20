@@ -3,6 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "PiwikPROSDK",
+    platforms: [.iOS(.v9)],
     products: [
         .library(name: "PiwikPROSDK", targets: ["PiwikPROSDK"]),
     ],
@@ -10,6 +11,7 @@ let package = Package(
         
     ],
     targets: [
-        .binaryTarget(name: "PiwikPROSDK", path: "PiwikPROSDK.xcframework/**/*")
-    ]
+        .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework")
+    ],
+    swiftLanguageVersions: [.v5]
 )
