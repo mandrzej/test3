@@ -10,6 +10,6 @@ let package = Package(
         
     ],
     targets: [
-        .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework")
+        .binaryTarget(name: "PiwikPROSDK", path: "PiwikPROSDK.xcframework/**/*.{h,m}")
     ]
 )
