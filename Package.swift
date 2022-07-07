@@ -12,6 +12,5 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework")
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
