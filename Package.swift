@@ -13,8 +13,6 @@ let package = Package(
         
     ],
     targets: [
-        .binaryTarget(name: "PiwikPROSDK",
-                      url: "https://github.com/mandrzej/test3/releases/download/1.0.0/PiwikPROSDK.xcframework.zip",
-                      checksum: "77a3be038b3f6d864c0762ccaf64bf82b7f4ac5e6fb9c04456eeaaf76bd07c90"),
+        .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework")
     ]
 )
