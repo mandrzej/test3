@@ -13,6 +13,13 @@ let package = Package(
         
     ],
     targets: [
-        .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework")
+        .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework"),
+        .target(name: "PiwikPROFramerowk",
+                dependencies: ["PiwikPROSDK"],
+                exclude:
+                    [
+                        "PiwikPROSDK.podspec",
+                        "CHANGELOG.md"
+                    ])
     ]
 )
