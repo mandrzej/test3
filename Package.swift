@@ -7,15 +7,16 @@ let package = Package(
     products: [
         .library(
             name: "PiwikPROSDK",
-            targets: ["PiwikPROSDK"]),
+            targets: ["PiwikPROFramework"]),
     ],
     dependencies: [
         
     ],
     targets: [
         .binaryTarget(name: "PiwikPROSDK", path: "./PiwikPROSDK.xcframework"),
-        .target(name: "PiwikPROFramerowk",
+        .target(name: "PiwikPROFramework",
                 dependencies: ["PiwikPROSDK"],
+                path: ".",
                 exclude:
                     [
                         "PiwikPROSDK.podspec",
