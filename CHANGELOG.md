@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 1.1.3 - 10.05.2022
+## 1.1.3 - 10.05.20223
 
 ### Changed
 - The `sendSocialInteractionWithAction`, `sendExceptionWithDescription` and `sendApplicationDownload` events are no longer tracked as screen views but as custom events.
