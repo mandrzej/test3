@@ -251,9 +251,10 @@ typedef NS_ENUM(NSUInteger, CustomVariableScope)
  @param action The name of the action, e.g Play, Pause, Download
  @param name Event name, e.g. song name, file name. Optional.
  @param value A numeric value, float or integer. Optional.
+ @param path The path under which this event occurred. Optional.
  @return YES if the event was queued for dispatching.
  */
-- (BOOL)sendEventWithCategory:(NSString *)category action:(NSString *)action name:(nullable NSString *)name value:(nullable NSNumber *)value NS_SWIFT_NAME(sendEvent(category:action:name:value:));
+- (BOOL)sendEventWithCategory:(NSString *)category action:(NSString *)action name:(nullable NSString *)name value:(nullable NSNumber *)value path:(nullable NSString *)path NS_SWIFT_NAME(sendEvent(category:action:name:value:path:));
 
 /**
  Track a caught exception or error.
@@ -261,11 +262,10 @@ typedef NS_ENUM(NSUInteger, CustomVariableScope)
  Exception are prefixed with "exception" by default unless prefixing scheme is turned off.
 
  @param description A description of the exception. Maximum 50 characters
- @param isFatal YES if the exception will lead to a fatal application crash
  @return YES if the event was queued for dispatching.
  @see isPrefixingEnabled
  */
-- (BOOL)sendExceptionWithDescription:(NSString *)description isFatal:(BOOL)isFatal NS_SWIFT_NAME(sendException(description:isFatal:));
+- (BOOL)sendExceptionWithDescription:(NSString *)description NS_SWIFT_NAME(sendException(description:));
 
 /**
  Track a users interaction with social networks.
@@ -273,12 +273,11 @@ typedef NS_ENUM(NSUInteger, CustomVariableScope)
  Exception are prefixed with "social" by default unless prefixing scheme is turned off.
 
  @param action The action taken by the user, e.g. like, tweet
- @param target The target of the action, e.g. a comment, picture or video (often an unique id or name) Optional.
  @param network The social network the user is interacting with, e.g. Facebook
  @return YES if the event was queued for dispatching.
  @see isPrefixingEnabled
  */
-- (BOOL)sendSocialInteractionWithAction:(NSString *)action target:(nullable NSString *)target network:(NSString *)network NS_SWIFT_NAME(sendSocialInteraction(action:target:network:));
+- (BOOL)sendSocialInteractionWithAction:(NSString *)action network:(NSString *)network NS_SWIFT_NAME(sendSocialInteraction(action:network:));
 
 /**
  Track a goal conversion.
@@ -287,7 +286,7 @@ typedef NS_ENUM(NSUInteger, CustomVariableScope)
  @param revenue The monetary value of the conversion. Optional.
  @return YES if the event was queued for dispatching.
  */
-- (BOOL)sendGoalWithID:(NSUInteger)goalID revenue:(nullable NSNumber *)revenue NS_SWIFT_NAME(sendGoal(ID:revenue:));
+- (BOOL)sendGoalWithID:(NSString *)goalID revenue:(nullable NSNumber *)revenue NS_SWIFT_NAME(sendGoal(ID:revenue:));
 
 /**
  Track a search performed in the application. The search could be local or towards a server.
